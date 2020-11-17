@@ -23,16 +23,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 
-`<App>
-	<ImageList />
-</App>
-
-<ImageList>
-	<BetterImage src=”./img.png”  theme=”oneImage” />
-	images.map( img => {
-		<BetterImage>
-			{img}
-		</BetterImage>
-	})
-</ImageList>
-`
+`<App>`
+`	<ImageList />`
+`</App>`
+` `
+`<ImageList>`
+`	<BetterImage src=”./img.png”  theme=”oneImage” />`
+`	images.map( img => {`
+`		<BetterImage>`
+`			{img}`
+`		</BetterImage>`
+`	})`
+`</ImageList>`
