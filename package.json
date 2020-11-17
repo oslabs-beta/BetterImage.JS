@@ -1,6 +1,6 @@
 {
   "name": "betterimage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
@@ -22,6 +22,15 @@
       "react-app/jest"
     ]
   },
+  "keywords": [
+    "image",
+    "images",
+    "resize",
+    "optimization",
+    "react",
+    "render",
+    "webp"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
