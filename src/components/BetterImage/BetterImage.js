@@ -1,60 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-// export default function BetterImage({ resize, ...props }) {
-//   return(
-//     // optimization features
-//       // resize: resize image (not at shallow level)
-//         // resize="200x200"
-//       // format: convert image format
-//         // format="webp"
-//       // quality (file size): converting image to desired pixel density based on viewport
-//         // quality="mobile"
-//         // quality="tablet"
-//       // cache: cache image option on rerender on repeated content
-//         // cache="yes"
-//       // priority: priority attribute tag prioritizes the render of the component
-//         // priority="high" // renders the component right away
-//         // priotity="low" // lazy loads the components
-//       //
+//props we get from App.js
 
-//     // vanity features
-//       // flip: horizontal or vertical
-//         // flip="vertical"
-//       // rotate
-//         // rotate="90" // max at 360
-//       // mask
-//         // mask="darker"
-//       // contrast
-//         // contrast="30" // max at 100
-//       // filter
-//         // filter="sepia" // famous filters
-//       // shape
-//         // shape="star" // creates a star shaped image
-//       // corners
-//         // corners="round" // creates a round corner
+export default function BetterImage(props) {
+  const { resize, source } = props;
 
-//     // extension
-//       // dynamicQuality:
-//         // dyanmicQuality="mobileFirst"
-//           // advantageous for init load and SEO
-//         // dyanmicQuality="qualityFirst"
-//           // advantageous for low count of images to render
-//           // advantageous for webs that need quality images
-//       // Isometric render specific features
-//         // isometric="SPA"
-//           // optimized for Single Page Applications
-//         // isometric="SSR"
-//           // optimized for Server Side Rendering
-//         // shallowEdits:
-//           // shallowEdit="yes"
-//             // edit the image at CSS-level
-//             // edit the image at file-render-level
-//   )
-// }
+  function resizeFunc(string, source) {
+    let foundX = false;
+    let num1 = '';
+    let num2 = '';
 
-BetterImage.propTypes = {
-  diet: PropTypes.arrayOf(PropTypes.string).isRequired,
-  name: PropTypes.string.isRequired,
-  size: PropTypes.number.isRequired,
-};
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] !== 'x' && foundX === false) {
+        num1 = num1.concat(string[i]);
+      } else if (string[i] === 'x') {
+        foundX = true;
+      } else if (string[i] !== 'x' && foundX === true) {
+        num2 = num2.concat(string[i]);
+      }
+    }
+    num1 = Number(num1);
+    num2 = Number(num2);
+
+    let newImg = (
+      <img src={source} alt='test' style={{ height: num1, width: num2 }}></img>
+    );
+
+    return newImg;
+  }
+
+  const createImg = resizeFunc(resize, source);
+
+  return <div>{createImg}</div>;
+}
