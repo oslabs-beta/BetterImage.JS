@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BetterImage from '../BetterImage/BetterImage.js';
-import bestPhotoEver from './images/bestPhotoEver.png';
+import originalImage from './images/bestPhotoEver.png';
 
 
 class App extends Component {
@@ -15,7 +15,6 @@ class App extends Component {
     .then(res => this.setState({ apiResponse: res }));
   }
   componentWillMount() {
-    console.log(bestPhotoEver);
       this.callAPI();
   }
 
@@ -23,9 +22,10 @@ class App extends Component {
     return (
       <div>
         <BetterImage
-          source={bestPhotoEver}
+          source={originalImage}
           resize={'500x750'}
           format={'webp'}
+          
         />
       </div>
     );
