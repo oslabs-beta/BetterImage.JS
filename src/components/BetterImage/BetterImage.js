@@ -1,13 +1,15 @@
 import React from 'react';
 import webp from 'webp-converter';
 
-//props we get from App.js
-
-
 export default function BetterImage(props) {
   const { resize, source, format } = props;
 
-  function resizeFunc(string, source) {
+  ///////////////////////////* Hoisted Variables */////////////////////////////
+  let resizedImageWidth;
+  let resizedImageHeight;
+
+  /////////////////////////* Image Resize Functionality *////////////////////////
+  function resizeFunc(string) {
     let foundX = false;
     let num1 = '';
     let num2 = '';
@@ -21,18 +23,15 @@ export default function BetterImage(props) {
         num2 = num2.concat(string[i]);
       }
     }
-    num1 = Number(num1);
-    num2 = Number(num2);
+    resizedImageHeight = Number(num1);
+    resizedImageWidth = Number(num2);
 
-    let newImg = (
-      <img src={source} alt='test' style={{ height: num1, width: num2 }}></img>
-    );            
-
-    return newImg;
+    return;
   }
-let convertData;
+  
+  
+  ////////////////* Convert Image Format to WEBP Functionality */////////////////
   function convertedImg(source){
-    console.log(source)
     fetch('/api/convert', {
       method: 'POST',
       headers: {
@@ -40,20 +39,54 @@ let convertData;
          },
         body: JSON.stringify({image: source})
     })
-     
-
+    .then(
+      // res should return image name passed from source
+    )
   }
 
-const convert = convertedImg(source)
+  ////////////////////* converted Images are declared */////////////////////
+  // format
+  const convert = convertedImg(source)
+  // resize
   const createImg = resizeFunc(resize, source);
-  // const convertImg = formatFunc(format);
-let picture = require('./convertedImage/bestPhotoEver.webp')
- return (
-   
- <div>
- {convert}
- <img src={picture}/>
 
- </div>
- );
+  ////////////////////* import all images in optimized folder */////////////////////
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+  const images = importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
+  // custom reverse function
+  function reverse(s){
+    return s.split("").reverse().join("");
+  };
+  // if regex possible, find one
+  function extractName(string){
+    let arr = string.split('').reverse();
+    let indexDot = arr.indexOf('.');
+    let indexSlash = arr.indexOf('/');
+    let substring = arr.join('').substring(indexDot+1, indexSlash);
+    let firstString = substring.split("").reverse().join("");
+    let arr2 = firstString.split('');
+    let secondDot = arr2.indexOf('.');
+    let substring2 = arr2.join('').substring(0, secondDot);
+    return substring2;
+  }
+
+  let imgName = extractName(source);
+
+  ////////////////////* Chaining the APIs Together */////////////////////
+  
+  
+
+  ////////////////////* Render the modifed image component */////////////////////
+  return (
+    <div>
+      {convert}
+      {createImg}
+      <img src={images[`${imgName}.webp`]} style={{width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} alt="image failed to load"/>
+    </div>
+  );
+
 }
