@@ -2,10 +2,15 @@
 
 ** Note: this project is currently under construction. Please do not download/use this until the Alpha verion 0.1.0 is published.**
 
-BetterImage project aims to enhance the image optimization and editing experiences on React applications by providing a com
+## Why Use BetterImage
+
+BetterImage enhances the image optimization and editing experience on React by providing a single component that unifies the most frequently used techniques. For example, the 
+
+This is advantageous for developers for several reasons: 
 
 ## Business Case for BetterImage
 
+BetterImage was created to facilitate the use of images in React applications. At the core, we want to bring a 
 
 Users use phones to surf the web, but some Images are not optimized. That means sizes like 2000x2000 pixel images are only getting displayed 100x100 pixel.
 
