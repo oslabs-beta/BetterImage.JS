@@ -1,12 +1,10 @@
 import React from 'react';
 import webp from 'webp-converter';
 
-//props we get from App.js
-
-
 export default function BetterImage(props) {
   const { resize, source, format } = props;
 
+  // Image Resize
   function resizeFunc(string, source) {
     let foundX = false;
     let num1 = '';
@@ -30,7 +28,8 @@ export default function BetterImage(props) {
 
     return newImg;
   }
-let convertData;
+  
+  // Convert Image Format 
   function convertedImg(source){
     console.log(source)
     fetch('/api/convert', {
@@ -40,20 +39,28 @@ let convertData;
          },
         body: JSON.stringify({image: source})
     })
-     
-
   }
 
-const convert = convertedImg(source)
+  const convert = convertedImg(source)
   const createImg = resizeFunc(resize, source);
   // const convertImg = formatFunc(format);
-let picture = require('./convertedImage/bestPhotoEver.webp')
- return (
+
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+  
+  const images = importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
+
+// render 
+return (
    
  <div>
- {convert}
- <img src={picture}/>
-
+  {convert}
+  {console.log(images)}
+  <img src={images['bestPhotoEver.webp'].default}/>
  </div>
- );
+);
+
 }
