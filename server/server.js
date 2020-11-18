@@ -7,29 +7,31 @@ const bodyParser = require('body-parser')
 const PORT = 9000;
 
 app.use(express.json())
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.resolve(__dirname, '../public')))
 
-app.use('/api/convert',convertRouter)
+app.use('/api',convertRouter)
 
 app.get("/", function(req, res, next) { 
   res.send(path.resolve(__dirname, '../public/index.html'));
 });
 
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 400,
+    message: { err: 'An error occurred' }, 
+  };
+  const errorObj  = Object.assign(defaultErr, err);
+  console.log(errorObj.log);
+  return res.status(errorObj.status).send(errorObj.message);
+});
 
 
-app.post('/convert',  (req, res, next) => {
-  console.log(res.locals.convert)
-  res.send(res.locals.convert)
-
-})
 
 
 
-  // function formatFunc() {
-  //     const result = webp.cwebp("../../public/images/bestPhotoEver.png","/convertedImages/bestPhotoEver.webp", "-q 80");
-  // }
-  
+
 
 app.listen(PORT, () => {
   console.log(`server on port ${PORT}`)
