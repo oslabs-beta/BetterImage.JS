@@ -30,10 +30,33 @@ export default function BetterImage(props) {
 
     return newImg;
   }
+let convertData;
+  function convertedImg(source){
+    fetch('/convert', {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json' 
+         },
+        body: JSON.stringify(source)
+    })
+     .then(res => res.json())
+     .then((data) => {
+       console.log(data)
+       convertData = data 
+     })
 
+  }
 
+const convert = convertedImg(source)
   const createImg = resizeFunc(resize, source);
   // const convertImg = formatFunc(format);
 
-  return <div>{createImg}</div>;
+ return (
+   
+ <div>
+ {convert}
+ <img src={`../convertedImage/bestPhotoEver.webp`}/>
+
+ </div>
+ );
 }

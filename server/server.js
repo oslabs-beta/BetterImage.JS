@@ -2,19 +2,27 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const webp = require('webp-converter');
-
+const convertRouter = require(path.join(__dirname, './route/api.js'))
+const bodyParser = require('body-parser')
 const PORT = 9000;
 
+app.use(express.json())
+app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, '../public')))
+
+app.use('/api/convert',convertRouter)
 
 app.get("/", function(req, res, next) { 
   res.send(path.resolve(__dirname, '../public/index.html'));
 });
 
-const result = webp.cwebp(path.resolve(__dirname, '../src/components/App/images/bestPhotoEver.png'), path.resolve(__dirname, '../src/components/BetterImage/convertedImage/bestPhotoEver.webp'),"-q 80");
-result.then((response) => {
-  console.log(response);
-});
+
+
+app.post('/convert',  (req, res, next) => {
+  console.log(res.locals.convert)
+  res.send(res.locals.convert)
+
+})
 
 
 
