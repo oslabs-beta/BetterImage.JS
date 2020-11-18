@@ -1,9 +1,11 @@
 import React from 'react';
+import webp from 'webp-converter';
 
 //props we get from App.js
 
+
 export default function BetterImage(props) {
-  const { resize, source } = props;
+  const { resize, source, format } = props;
 
   function resizeFunc(string, source) {
     let foundX = false;
@@ -24,12 +26,14 @@ export default function BetterImage(props) {
 
     let newImg = (
       <img src={source} alt='test' style={{ height: num1, width: num2 }}></img>
-    );
+    );            
 
     return newImg;
   }
 
+
   const createImg = resizeFunc(resize, source);
+  // const convertImg = formatFunc(format);
 
   return <div>{createImg}</div>;
 }
