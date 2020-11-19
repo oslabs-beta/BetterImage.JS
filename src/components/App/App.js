@@ -23,9 +23,8 @@ class App extends Component {
       <div>
         <BetterImage
           source={originalImage}
-          resize={'500x750'}
+          resize={'900x1200'}
           format={'webp'}
-          
         />
       </div>
     );
