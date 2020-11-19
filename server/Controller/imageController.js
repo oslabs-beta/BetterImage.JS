@@ -4,16 +4,13 @@ const webp = require('webp-converter');
 const imageController = {}
 
 imageController.convertWebp = (req, res, next) => {
-  const result = webp.cwebp(path.resolve(__dirname, '../../src/components/App/images/bestPhotoEver.png'), path.resolve(__dirname, '../../src/components/BetterImage/convertedImage/bestPhotoEver.webp'),"-q 80");
-  
-  result.then((response) => {
-  res.locals.convert = response
+  const { imageName, quality} = req.body;
+  console.log("conversion to webp triggered")
+
+   const result = webp.cwebp(path.resolve(__dirname, `../../src/components/App/images/${imageName}.png`), path.resolve(__dirname, `../../src/components/BetterImage/convertedImage/${imageName}.webp`),`-q ${quality}`);
+
   return next()
-})
-
-
 }
-
 
 
 
