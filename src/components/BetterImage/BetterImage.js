@@ -77,8 +77,8 @@ export default function BetterImage(props) {
   let imgName = extractName(source);
 
   ////////////////////* Chaining the APIs Together */////////////////////
-  
-  
+  // switch statement
+
 
   ////////////////////* Render the modifed image component */////////////////////
   return (
