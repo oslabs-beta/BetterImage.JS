@@ -93,6 +93,7 @@ export default class BetterImage extends React.Component {
     ////////////////////* Render the modifed image component */////////////////////
     return (
       <div>
+        {console.log("redered")}
         {/* {resizeFunc(resize, source)} */}
         <img src={this.importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/))[`${this.extractName(this.state.source)}.webp`]}  />
         {/* style={{width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} */}
