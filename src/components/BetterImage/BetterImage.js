@@ -1,37 +1,48 @@
 import React from 'react';
-import webp from 'webp-converter';
 
-export default function BetterImage(props) {
-  const { resize, source, format } = props;
+
+export default class BetterImage extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      resize: this.props.resize,
+      source: this.props.source,
+      format: this.props.format,
+    }
+    this.importAll = this.importAll.bind(this);
+    this.convertedImg = this.convertedImg.bind(this);
+    this.extractName = this.extractName.bind(this);
+  }
+
 
   ///////////////////////////* Hoisted Variables */////////////////////////////
-  let resizedImageWidth;
-  let resizedImageHeight;
+  // let resizedImageWidth;
+  // let resizedImageHeight;
 
   /////////////////////////* Image Resize Functionality *////////////////////////
-  function resizeFunc(string) {
-    let foundX = false;
-    let num1 = '';
-    let num2 = '';
+  //  resizeFunc(string) {
+  //   let foundX = false;
+  //   let num1 = '';
+  //   let num2 = '';
 
-    for (let i = 0; i < string.length; i++) {
-      if (string[i] !== 'x' && foundX === false) {
-        num1 = num1.concat(string[i]);
-      } else if (string[i] === 'x') {
-        foundX = true;
-      } else if (string[i] !== 'x' && foundX === true) {
-        num2 = num2.concat(string[i]);
-      }
-    }
-    resizedImageHeight = Number(num1);
-    resizedImageWidth = Number(num2);
+  //   for (let i = 0; i < string.length; i++) {
+  //     if (string[i] !== 'x' && foundX === false) {
+  //       num1 = num1.concat(string[i]);
+  //     } else if (string[i] === 'x') {
+  //       foundX = true;
+  //     } else if (string[i] !== 'x' && foundX === true) {
+  //       num2 = num2.concat(string[i]);
+  //     }
+  //   }
+  //   resizedImageHeight = Number(num1);
+  //   resizedImageWidth = Number(num2);
 
-    return;
-  }
+  //   return;
+  // }
   
   
   ////////////////* Convert Image Format to WEBP Functionality */////////////////
-  function convertedImg(source){
+   convertedImg(source){
     fetch('/api/convert', {
       method: 'POST',
       headers: {
@@ -45,24 +56,20 @@ export default function BetterImage(props) {
   }
 
   ////////////////////* converted Images are declared */////////////////////
-  // format
-  const convert = convertedImg(source)
-  // resize
-  const createImg = resizeFunc(resize, source);
 
   ////////////////////* import all images in optimized folder */////////////////////
-  function importAll(r) {
+   importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
     return images;
   }
-  const images = importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
+  
   // custom reverse function
-  function reverse(s){
+   reverse(s){
     return s.split("").reverse().join("");
   };
   // if regex possible, find one
-  function extractName(string){
+   extractName(string){
     let arr = string.split('').reverse();
     let indexDot = arr.indexOf('.');
     let indexSlash = arr.indexOf('/');
@@ -74,19 +81,24 @@ export default function BetterImage(props) {
     return substring2;
   }
 
-  let imgName = extractName(source);
+  // let imgName = extractName(source);
 
   ////////////////////* Chaining the APIs Together */////////////////////
   // switch statement
+  componentDidMount(){
+    {this.convertedImg(this.state.source)}
+  }
 
+  render(){
+    ////////////////////* Render the modifed image component */////////////////////
+    return (
+      <div>
+        {/* {resizeFunc(resize, source)} */}
+        <img src={this.importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/))[`${this.extractName(this.state.source)}.webp`]}  />
+        {/* style={{width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} */}
+      </div>
+    );
 
-  ////////////////////* Render the modifed image component */////////////////////
-  return (
-    <div>
-      {convert}
-      {createImg}
-      <img src={images[`${imgName}.webp`]} style={{width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} alt="image failed to load"/>
-    </div>
-  );
+  }
 
 }
