@@ -90,7 +90,7 @@ export default class BetterImage extends React.Component {
     let sourceRoutePath = this.importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
     let sourceRoute = sourceRoutePath[[`${(this.state.imageName)}.webp`]];
     let defaultImage = sourceRoutePath["default.png"];
-    console.log("default Image", defaultImage.default)
+    // console.log("default Image", defaultImage.default)
 
     // {console.log("rendered", this.state.fetched)}
     // {console.log("source", this.state.source)}
