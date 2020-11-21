@@ -13,6 +13,7 @@ class App extends Component {
           source={bigPNG}
           resize={'900x1200'}
           format={'webp'}
+          quality={100}
         />
       </div>
     );
