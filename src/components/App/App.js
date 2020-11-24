@@ -21,9 +21,13 @@ class App extends Component {
   render() { 
     return (
       <div>
+        <h1> Original </h1>
+        <img src={originalImage} />
+
+        <h1> BetterImage</h1> 
         <BetterImage
           source={originalImage}
-          resize={'900x1200'}
+          resize={'600x800'}
           format={'webp'}
         />
       </div>
