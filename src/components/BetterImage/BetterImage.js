@@ -2,11 +2,12 @@ import React from 'react';
 import webp from 'webp-converter';
 
 export default function BetterImage(props) {
-  const { resize, source, format } = props;
+  const { resize, source, format, rotation } = props;
 
   ///////////////////////////* Hoisted Variables */////////////////////////////
   let resizedImageWidth;
   let resizedImageHeight;
+  let rotationDegree;
 
   /////////////////////////* Image Resize Functionality *////////////////////////
   function resizeFunc(string) {
@@ -28,6 +29,10 @@ export default function BetterImage(props) {
 
     return;
   }
+
+  function rotateImg(degree){
+    rotationDegree = degree;
+  }
   
   
   ////////////////* Convert Image Format to WEBP Functionality */////////////////
@@ -46,9 +51,11 @@ export default function BetterImage(props) {
 
   ////////////////////* converted Images are declared */////////////////////
   // format
-  const convert = convertedImg(source)
+  const convert = convertedImg(source);
   // resize
   const createImg = resizeFunc(resize, source);
+  // rotate
+  const rotatedImg = rotateImg(rotation);
 
   ////////////////////* import all images in optimized folder */////////////////////
   function importAll(r) {
@@ -85,7 +92,8 @@ export default function BetterImage(props) {
     <div>
       {convert}
       {createImg}
-      <img src={images[`${imgName}.webp`]} style={{width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} alt="image failed to load"/>
+      {rotatedImg}
+      <img src={images[`${imgName}.webp`]} style={{transform: `rotate(${rotationDegree}deg)`, width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} alt="image failed to load"/>
     </div>
   );
 

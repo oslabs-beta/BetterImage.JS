@@ -29,6 +29,7 @@ class App extends Component {
           source={originalImage}
           resize={'600x800'}
           format={'webp'}
+          rotation={'45'}
         />
       </div>
     );
