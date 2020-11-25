@@ -2,38 +2,45 @@ import React from 'react';
 import webp from 'webp-converter';
 
 export default function BetterImage(props) {
-  const { resize, source, format, rotation } = props;
+  const { resize, source, format, rotation, blur, grayscale, brightness, contrast, sepia, invert, saturate, opacity, hueRotate, dropShadow, roundCorners, border } = props;
 
-  ///////////////////////////* Hoisted Variables */////////////////////////////
+  ///////////////////////* Hoisted Variables *///////////////////////
   let resizedImageWidth;
   let resizedImageHeight;
   let rotationDegree;
+  let shadowX;
+  let shadowY;
+  let shadowSize;
+  let shadowColor;
+  let borderThick;
+  let borderColor;
+  let borderLine;
 
-  /////////////////////////* Image Resize Functionality *////////////////////////
+  //////////////////////* Image Resize Functionality */////////////////////
   function resizeFunc(string) {
-    let foundX = false;
-    let num1 = '';
-    let num2 = '';
+    string = string.split("x");
+    resizedImageHeight = string[0]
+    resizedImageWidth = string[1]
+  }
 
-    for (let i = 0; i < string.length; i++) {
-      if (string[i] !== 'x' && foundX === false) {
-        num1 = num1.concat(string[i]);
-      } else if (string[i] === 'x') {
-        foundX = true;
-      } else if (string[i] !== 'x' && foundX === true) {
-        num2 = num2.concat(string[i]);
-      }
-    }
-    resizedImageHeight = Number(num1);
-    resizedImageWidth = Number(num2);
-
-    return;
+  function borderImage(string){
+    string = string.split(",");
+    borderThick = string[0];
+    borderLine = string[1];
+    borderColor = string[2];
   }
 
   function rotateImg(degree){
     rotationDegree = degree;
   }
   
+  function shadowImg(dropShadow){
+    dropShadow = dropShadow.split(",");
+    shadowX = dropShadow[0]
+    shadowY = dropShadow[1]
+    shadowSize = dropShadow[2]
+    shadowColor = dropShadow[3]
+  }
   
   ////////////////* Convert Image Format to WEBP Functionality */////////////////
   function convertedImg(source){
@@ -45,7 +52,6 @@ export default function BetterImage(props) {
         body: JSON.stringify({image: source})
     })
     .then(
-      // res should return image name passed from source
     )
   }
 
@@ -56,6 +62,10 @@ export default function BetterImage(props) {
   const createImg = resizeFunc(resize, source);
   // rotate
   const rotatedImg = rotateImg(rotation);
+  // shadow
+  const sdwImg = shadowImg(dropShadow);
+  // border
+  const borderImg = borderImage(border);
 
   ////////////////////* import all images in optimized folder */////////////////////
   function importAll(r) {
@@ -63,11 +73,9 @@ export default function BetterImage(props) {
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
     return images;
   }
+
   const images = importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
-  // custom reverse function
-  function reverse(s){
-    return s.split("").reverse().join("");
-  };
+
   // if regex possible, find one
   function extractName(string){
     let arr = string.split('').reverse();
@@ -93,7 +101,9 @@ export default function BetterImage(props) {
       {convert}
       {createImg}
       {rotatedImg}
-      <img src={images[`${imgName}.webp`]} style={{transform: `rotate(${rotationDegree}deg)`, width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} alt="image failed to load"/>
+      {sdwImg}
+      {borderImg}
+      <img src={images[`${imgName}.webp`]} style={{filter:`grayscale(${grayscale}%) blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%) sepia(${sepia}%) invert(${invert}%) saturate(${saturate}%) opacity(${opacity}%) hue-rotate(${hueRotate}deg) drop-shadow(${shadowX}px ${shadowY}px ${shadowSize}px ${shadowColor})`, transform: `rotate(${rotationDegree}deg)`, width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`, borderRadius: `${roundCorners}px`, border: `${borderThick}px ${borderLine} ${borderColor}`}} alt="image failed to load"/>
     </div>
   );
 
