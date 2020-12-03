@@ -1,10 +1,14 @@
-const fs = require('fs');
 const path = require('path')
 const webp = require('webp-converter');
 const imageController = {}
 
 imageController.convertWebp = (req, res, next) => {
-  const result = webp.cwebp(path.resolve(__dirname, '../../src/components/App/images/bestPhotoEver.png'), path.resolve(__dirname, '../../src/components/BetterImage/convertedImage/bestPhotoEver.webp'),"-q 80");
+  console.log("in middleware");
+
+  const { originalImageType, imageName, quality } = req.body;
+  console.log("imageName", imageName)
+
+  const result = webp.cwebp(path.resolve(__dirname, `../../src/components/App/images/${imageName}.${originalImageType}`), path.resolve(__dirname, `../../src/components/BetterImage/convertedImage/${imageName}.webp`),`-q ${quality}`);
   
   result.then((response) => {
   res.locals.convert = response

@@ -8,7 +8,7 @@ const router = express.Router()
 // })
 
 router.post('/convert', imageController.convertWebp,  (req, res, next) => {
-  console.log('in middleware', res.locals.convert)
+  console.log('in api', res.locals.convert)
   res.send(res.locals.convert)
 
 })
