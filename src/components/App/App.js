@@ -10,7 +10,7 @@ class App extends Component {
           <img src={originalImage} />
 
         <h1> BetterImage</h1> 
-          <BetterImage
+        <BetterImage
             source={originalImage} // file import path
             resize={'600x800'} // ratio
             quality={'100'}// quality
@@ -35,6 +35,7 @@ class App extends Component {
             perspective={'0'} // px
             matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
           />
+
       </div>
     );
   }
