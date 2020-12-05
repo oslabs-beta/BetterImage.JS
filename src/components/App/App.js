@@ -37,7 +37,7 @@ class App extends Component {
         <BetterImage
             source={originalImage} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -62,7 +62,7 @@ class App extends Component {
         <BetterImage
             source={img1} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -87,7 +87,7 @@ class App extends Component {
         <BetterImage
             source={img2} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -112,7 +112,7 @@ class App extends Component {
         <BetterImage
             source={img3} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -137,7 +137,7 @@ class App extends Component {
         <BetterImage
             source={img4} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -162,7 +162,7 @@ class App extends Component {
         <BetterImage
             source={img5} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -187,7 +187,7 @@ class App extends Component {
         <BetterImage
             source={img6} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -212,7 +212,7 @@ class App extends Component {
         <BetterImage
             source={img7} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -237,7 +237,7 @@ class App extends Component {
         <BetterImage
             source={img8} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -262,7 +262,7 @@ class App extends Component {
         <BetterImage
             source={img9} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -287,7 +287,7 @@ class App extends Component {
         <BetterImage
             source={img10} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -312,7 +312,7 @@ class App extends Component {
         <BetterImage
             source={img11} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
@@ -337,7 +337,7 @@ class App extends Component {
         <BetterImage
             source={img12} // file import path
             resize={'600x800'} // ratio
-            quality={'100'}// quality
+            quality={'10'}// quality
             rotation={'360'} // in degrees
             grayscale={'0'} // in percentage
             blur={'0'} // in pixels
