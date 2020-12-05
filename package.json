@@ -8,6 +8,7 @@
     "express": "^4.17.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-image": "^4.0.3",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4",
     "webp-converter": "^2.3.0"

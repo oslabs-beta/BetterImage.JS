@@ -8,7 +8,7 @@ export default class BetterImage extends React.Component {
     return(
       <div>
         {/* {resizeFunc(resize, source)} */}
-          <img src={this.props.sourceRoute}  />
+          <img src={this.props.sourceRoute} alt="image loading..." />
         {/* style={{width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`}} */}
       </div>
     )
