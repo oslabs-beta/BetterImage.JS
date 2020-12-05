@@ -133,47 +133,21 @@ export default function BetterImage(props) {
     return images;
   }
 
-  fetchData() {
-    if(this.state.fetched === false ){
-      console.log("fetching....")
-      fetch('/api/convert', {
-        method: 'POST',
-        headers: {
-           'Content-Type': 'application/json' 
-           },
-          body: JSON.stringify({
-            imageName: this.state.imageName,
-            quality: this.state.quality,
-          })
-      }).then((data) => {
-        let result = data.json();
-        console.log("data status from backend", data["ok"])
-        if(data["ok"] === true && this.state.dataOk === false) {
-          this.setState( { ...this.state, dataOk: true, fetched: true}, () => {console.log("fetched is true")})
-        }
-      })
-      .catch(
-        console.log("we are in catch")
-      )
-    }
-    else{
-      console.log("I'm out of fetch")
-    }
-  }
-  
-  render(){
-    let sourceRoutePath = this.importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
-    let sourceRoute = sourceRoutePath[[`${(this.state.imageName)}.webp`]];
-    let defaultImage = sourceRoutePath["default.png"];
-    // console.log("default Image", defaultImage.default)
+  const images = importAll(require.context('./convertedImage', false, /\.(png|jpe?g|webp|svg)$/));
 
-    // {console.log("rendered", this.state.fetched)}
-    // {console.log("source", this.state.source)}
-
-    return (
-      <section>
-        { sourceRoute && this.state.dataOk === false ? <RenderedImage sourceRoute={sourceRoute} defaultImage={defaultImage} /> : this.fetchData()  }
-      </section>
-    );
-  }
+  ////////////////////* Render the modifed image component */////////////////////
+  return (
+    <div>
+      {createImg}
+      {rotatedImg}
+      {sdwImg}
+      {borderImg}
+      {matrixImage}
+      {translateImage}
+      {scaleImage}
+      {skewImage}
+      {images[`${imgName}.webp`] ? <Img src={[images[`${imgName}.webp`], '/img/placeholder.webp']} style={{filter:`grayscale(${grayscale}%) blur(${blur}px) brightness(${brightness}%) contrast(${contrast}%) sepia(${sepia}%) invert(${invert}%) saturate(${saturate}%) opacity(${opacity}%) hue-rotate(${hueRotate}deg) drop-shadow(${shadowX}px ${shadowY}px ${shadowSize}px ${shadowColor})`, transform: `matrix(${matrix1}, ${matrix2}, ${matrix3}, ${matrix4}, ${matrix5}, ${matrix6}) translate(${translatePx}px, ${translatePercent}%) scale(${scaleX}, ${scaleY}) skew(${skewX}deg, ${skewY}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) perspective(${perspective}px) rotate(${rotationDegree}deg)`, width: `${resizedImageWidth}px`, height: `${resizedImageHeight}px`, borderRadius: `${roundCorners}px`, border: `${borderThick}px ${borderLine} ${borderColor}`}} alt="image failed to load"/> : convertedImg(imgName, quality, originalImageType) }
+      
+    </div>
+  );
 }
