@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import BetterImage from '../BetterImage/BetterImage.js';
 import originalImage from './images/bestPhotoEver.png';
-import bigPNG from "./images/bigPNG.png"
+import img1 from './images/avocado.png';
+import img2 from './images/cat.png';
+import img3 from './images/colors.png';
+import img4 from './images/diamond.png';
+import img5 from './images/gradient.png';
+import img6 from './images/image.png';
+import img7 from './images/light.png';
+import img8 from './images/ptable.png';
+import img9 from './images/rock.png';
+import img10 from './images/table.png';
+import img11 from './images/us.png';
+import img12 from './images/veg.png';
 
 class App extends Component {
   render() { 
