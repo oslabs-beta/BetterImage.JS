@@ -127,7 +127,7 @@ export default function BetterImage(props) {
 
 
   ////////////////////* import all images in optimized folder */////////////////////
-  importAll(r) {
+  function importAll(r) {
     let images = {};
     r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
     return images;
