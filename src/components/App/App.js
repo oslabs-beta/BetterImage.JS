@@ -32,333 +32,72 @@ class App extends Component {
           <img src={img11} />
           <img src={img12} /> */}
 
-
         <h1> BetterImage</h1> 
         <BetterImage
-            source={originalImage} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={originalImage}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img1} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img1}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img2} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img2}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img3} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img3}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img4} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img4}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img5} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img5}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img6} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img6}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img7} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img7}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img8} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img8}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img9} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img9}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img10} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img10}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img11} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img11}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
         <BetterImage
-            source={img12} // file import path
-            resize={'600x800'} // ratio
-            quality={'10'}// quality
-            rotation={'360'} // in degrees
-            grayscale={'0'} // in percentage
-            blur={'0'} // in pixels
-            brightness={'100'} // in percentage
-            contrast={'100'} // percentage
-            dropShadow={'0,0,0,gray'} // px px px color
-            sepia={'0'} // percentage
-            saturate={'100'} // percentage
-            opacity={'100'} // percentage
-            invert={'0'} // percentage
-            hueRotate={'0'} // degrees
-            border={'0,solid,red'} // px solid color
-            roundCorners={'0'} // px
-            translate={'0, 0'} // px %
-            scale={'1,1'} // ScaleX ScaleY
-            skew={'0,0'} // deg deg
-            rotateX={'0'} // deg
-            rotateY={'0'} // deg
-            perspective={'0'} // px
-            matrix={'1,0,0,1,0,0'} // scaleX,skewY,skewX,scaleY,translateX,translateY
-          />
+          source={img12}
+          quality={'80'}// quality optional (default to 100)
+          resize={'600x800'} // ratio optional
+        />
       </div>
     );
   }

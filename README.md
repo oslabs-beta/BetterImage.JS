@@ -56,20 +56,26 @@ BetterImage component
 </ImageList>
 `
 
+### 2.2 Features
+Image compression, resize, 
+Works with both Class and Hooks
+SEO optimization
+
+
+
 ## 3 Advanced Guides
 
+### 3.1 Default Parameters
+When BetterImage component doesn't receive optional parameters, it defaults to constant parameters specified in the code. The deafult parameters are as following:
 
 
 
 
-## 4 Testing/Tracer
+## 4 Results
 
 
-## 5 Upcoming Features
 
-### 5.1 Isometric Rendering Optimization
-
-## 6 Reference
+## 5 Reference
 
 ### 6.1 Related Resources
 
