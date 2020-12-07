@@ -1,18 +1,16 @@
 # BetterImage Documentation
 
-** Note: this project is currently under construction. Please do not download/use this until the Alpha verion 0.1.0 is published.**
+** Note: this project is currently under construction. Please do not download/use this until the Official release 1.0.0 is published.**
 
-## Why Use BetterImage
+## What Is BetterImage
 
-BetterImage enhances the image optimization and editing experience on React by providing a single component that unifies the most frequently used techniques. For example, the 
+BetterImage enhances the image optimization and editing experience on React by providing a single component that unifies the most frequently used techniques. 
 
-This is advantageous for developers for several reasons: 
+## Synopsis
 
-## Business Case for BetterImage
+BetterImage was created to facilitate React applications to render images faster. At the core, we want to bring a 
 
-BetterImage was created to facilitate the use of images in React applications. At the core, we want to bring a 
-
-Users use phones to surf the web, but some Images are not optimized. That means sizes like 2000x2000 pixel images are only getting displayed 100x100 pixel.
+Mobile has been the go-to method to surf the web, but most Images are yet to be optimized for stellar mobile experiences. Large images with sizes 2000x2000 pixel are still fully transferred before .
 
 99.7 % of images don't use modern image formats like WebP which is 30% smaller than JPEG
 
@@ -21,6 +19,12 @@ Users use phones to surf the web, but some Images are not optimized. That means 
 In the project directory, you can run:
 
 ### 1.1 Getting Started
+
+BetterImage requires one modification in the Webpack to make it work properly. 
+
+
+
+In case of using `npx create-react-app`
 
 ### 1.2 Adding BetterImage
 
@@ -69,7 +73,7 @@ SEO optimization
 When BetterImage component doesn't receive optional parameters, it defaults to constant parameters specified in the code. The deafult parameters are as following:
 
 
-
+BetterImage component uses `ImportAll` syntax to import all converted images to the rendering webpage. This step requires file-loader to disable the `esModule` by setting it to `false`. 
 
 ## 4 Results
 
