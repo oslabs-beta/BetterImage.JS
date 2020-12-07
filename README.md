@@ -1,64 +1,53 @@
 # BetterImage Documentation
 
-** Note: this project is currently under construction. Please do not download/use this until the Official release 1.0.0 is published.**
-
 ## What Is BetterImage
 
-BetterImage enhances the image optimization and editing experience on React by providing a single component that unifies the most frequently used techniques. 
+BetterImage enhances the image rendering experience on React by providing a component that compresses and edits images.
 
-## Synopsis
+![alt text](./readme/img1.png)
 
-BetterImage was created to facilitate React applications to render images faster. At the core, we want to bring a 
+## Installation 
+There are several ways to get started with BetterImage component. If you are having hard time getting started using the "Master" branch method, we've created an "Easy-Setup" branch for users to quickly get started using pre-configured folder. <br>
+Precaution: "Easy-Setup" branch will be a lot heavier in size versus the Master branch from included node_modules folder. 
 
-Mobile has been the go-to method to surf the web, but most Images are yet to be optimized for stellar mobile experiences. Large images with sizes 2000x2000 pixel are still fully transferred before .
+### 1) Master Branch (manual Webpack config for create-react-app)
 
-99.7 % of images don't use modern image formats like WebP which is 30% smaller than JPEG
+Step 1: Clone the repository to your local folder using `git clone https://github.com/oslabs-beta/BetterImage.JS` <br>
+Step 2: Navigate to `cd betterimage.js` into the folder <br>
+Step 3: Run `npm install` to download the node_module dependencies <br> 
+Step 4: Navigate to WebPack config file via `cd node_modules/react-scripts/config` <br>
+Step 5: Open the WebPack file using `open webpack.config.js` <br>
+Step 6: `Cmd+f` or navigate to line 581 to locate "file-loader"  <br>
+Step 7: Add a new line of code `esModule: false` in between line 588 and 589 inside the "options" object <br>
+Step 8: Save the "webpack.config.js" file <br>
+Step 9: Run the application in development setting using `npm start` <br>
 
-## 1 Installation 
+### 2) Easy-Setup Branch (pre-configured node_modules)
 
-In the project directory, you can run:
+Step 1: Clone the branch to your local folder using `git clone --single-branch --branch easy-setup https://github.com/oslabs-beta/BetterImage.JS` <br>
+Step 2: Navigate into the folder using `cd betterimage.js`
+Step 3: Run the application in development mode using `npm start`
 
-### 1.1 Getting Started
+### 3 NPM Install (add to existing project)
 
-BetterImage requires one modification in the Webpack to make it work properly. 
+This feature is work in progress
 
+## Starting with BetterImage
 
+### Basic Structure
 
-In case of using `npx create-react-app`
+<img src="./readme/img3.png width="200" />
 
-### 1.2 Adding BetterImage
+```
+import BetterImage from "./src/components/BetterImage/BetterImage.js"
 
-### 1.4 Known Installation Bugs
-nodemon or react dev server not running (vice versa)
-
-issue with node gui (represented as ____chkstk_darwin)
-
-[NodeGUI Issue](https://github.com/nodegui/nodegui/issues/391)
-
-
-## 2 Main Concepts
-
-### 2.1 BetterImage Component
-
-#### 2.1.1 Example of Using BetterImage Component
-
-BetterImage component 
-
-`<BetterImage>`
-
-`<App>
-	<ImageList />
+<App>
+	<BetterImage source=”./img1.png” />
+	<BetterImage source=”./img2.png” grayscale="100" />
+	<BetterImage source=”./img3.png” rotation="180" />
 </App>
 
-<ImageList>
-	<BetterImage src=”./img.png” resize="200x200" theme=”oneImage” />
-	images.map( img => {
-		<BetterImage>
-			{img}
-		</BetterImage>
-	})
-</ImageList>
-`
+```
 
 ### 2.2 Features
 Image compression, resize, 
@@ -74,6 +63,10 @@ When BetterImage component doesn't receive optional parameters, it defaults to c
 
 
 BetterImage component uses `ImportAll` syntax to import all converted images to the rendering webpage. This step requires file-loader to disable the `esModule` by setting it to `false`. 
+
+
+### 3.2 Why is Installation so Difficult?
+BetterImage leverages ES6 syntax `importAll` to  dynamically reference the converted images. For BetterImage to leverage this feature, WebPack in the node_modules folder configuration must be modified.
 
 ## 4 Results
 
