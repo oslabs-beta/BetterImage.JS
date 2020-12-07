@@ -16,6 +16,8 @@ class App extends Component {
   render() { 
     return (
       <div>
+
+      {/* sample original image rendering here */}
         <h1> Original Image </h1>
           <img src={img1} />
           {/* <img src={img2} />
@@ -28,68 +30,69 @@ class App extends Component {
           <img src={img9} />
           <img src={img10} />
           <img src={img11} />
-          <img src={img12} /> */}
+          */}
 
+      {/* betterimage rendering here */}
         <h1> BetterImage</h1> 
         <BetterImage
           source={img1}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img1}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'} 
         />
         <BetterImage
           source={img2}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'} 
         />
         <BetterImage
           source={img3}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'} 
         />
         <BetterImage
           source={img4}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img5}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'} 
         />
         <BetterImage
           source={img6}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img7}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img8}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img9}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img10}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
         <BetterImage
           source={img11}
-          quality={'80'}// quality optional (default to 100)
-          resize={'600x800'} // ratio optional
+          quality={'80'}
+          resize={'600x800'}
         />
       </div>
     );
