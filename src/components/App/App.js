@@ -5,9 +5,11 @@ class App extends Component {
   render() { 
     return (
       <div>
+        <BetterImage source={'./images/cat.png'} quality={'80'} resize={'1200x800'} />
+        
         <BetterImage
-          source={'./images/avocado.png'} // relative path to image
-          quality={'80'} // please refer to readme on attribute settings
+          source={'./images/avocado.png'} 
+          quality={'80'} 
           resize={'600x800'}
           rotation={'360'} 
           grayscale={'0'} 
@@ -29,12 +31,6 @@ class App extends Component {
           rotateY={'0'} 
           perspective={'0'}
           matrix={'1,0,0,1,0,0'}
-        />
-
-        <BetterImage
-          source={'./images/cat.png'}
-          quality={'80'}
-          resize={'1200x800'}
         />
       </div>
     );

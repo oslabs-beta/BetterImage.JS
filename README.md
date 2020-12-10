@@ -42,26 +42,25 @@ https://github.com/oslabs-beta/BetterImage.JS/tree/easy-setup
 
 ## Getting Started
 In the cloned repository, `src/components/App` holds the `App.js` file which contains several examples of the BetterImage component <br>
+
 <img src="./readme/img2.png" width="200px" > <br>
-Inside the App.js, BetterImage is imported along with default images
-```
-import BetterImage from "./src/components/BetterImage/BetterImage.js"
-import img1 from './images/avocado.png';
-import img2 from './images/cat.png';
-import img3 from './images/colors.png';
-```
+
+Inside the App.js, BetterImage.JS is imported. Unlike vanilla React application, you do not need to use `import from` to render images (more on this on dynamic image references under feature)
+
+<img src="./readme/import.png" width="500px" >
+
 Notice that instead of using the `<img>` tag, `<BetterImage/>` tag is used instead. Notice for BetterImage, "source" attribute is passed instead of the "src" attribute. <br>
-<img src="./readme/img3.png" width="450px" >
+<img src="./readme/img1.png" width="500px" >
 <br>
 It is important to note "source" is the only required attribute for BetterImage components. Additional attributes can be chained separated by a space. Full list of attributes can be found below in the "Features" section.<br>
 ```
-<BetterImage source=”./img1.png” /> // required source attribute
-<BetterImage source=”./img2.png” grayscale="100" /> // chained atributes
-<BetterImage source=”./img3.png” graysclae="100" rotation="180" />
+<BetterImage source=”./images/avocado.png” /> // required source attribute
+<BetterImage source=”./images/cat.png” grayscale="100" /> // chained atributes
+<BetterImage source=”./images/colors.png” graysclae="100" rotation="180" />
 ```
 We recommend getting familiarized with our App.js example before implementing your own BetterImage component. Note that App.js example is written as Class-based component but BetterImage can also be used in Hooks (due to absence of state management). 
 
-<img src="./readme/img4.png" width="450px" >
+<img src="./readme/img4.png" width="500px" >
 
 ## Main Features
 Two main features are mandated with BetterImage:
@@ -71,12 +70,12 @@ Two main features are mandated with BetterImage:
 ### File Type Conversion
 File type conversion is fixed to webp in version 1.0.0. Meaning, every image rendered using BetterImage will have a file type of webp when displayed on the React application. The webp conversion feature is powered by Google's cwebp engine. 
 
-<img src="./readme/conversion.gif" width="450px" >
+<img src="./readme/conversion.gif" width="500px" >
 
 ### File Compression
 File compression amount can be controlled using the "quality" attribute (range from 10 to 100). Each image can have its own unique quality specification. The default quality passed in absence of `quality` parameter is 80. We recommend keeping the quality greater than or equal to 80 to prevent perceivable image quality degradation. 
 
-<img src="./readme/memory.png" width="450px" >
+<img src="./readme/memory.png" width="500px" >
 
 ## Other Features
 There are several benefits of using BetterImage:
@@ -87,9 +86,9 @@ There are several benefits of using BetterImage:
 ### Fallback Image
 BetterImage renders come with fallback webp placeholders. The fallback image takes in the same attributes as the correctly rendered image. 
 
-<img src="./readme/placeholder.gif" width="450px" >
+<img src="./readme/placeholder.gif" width="500px" >
 
-### Dynamic Image Import References
+### Dynamic Image References
 BetterImage can reference compressed webp image paths without manually specifying paths with `import from`. This effectively automates and abstracts away the manual process of converting image and re-importing them on the application using new image name/paths. BetterImage syntax is shown below all attributes are passed as string):
 
 <img src="./readme/img-raw.png" height="250px" >
@@ -98,7 +97,7 @@ BetterImage can reference compressed webp image paths without manually specifyin
 ### Declarative Styling
 Declarative styling significantly reduces frequent syntax errors that come with in-line styling in React. Common syntactical errors include: wrong unit, missing unit, missing parenthesis or brackets, missing space (when chaining), misplaced effects (filter vs transformation) and etc. BetterImage provides declarative styling to help developers avoid these common pitfalls.
 
-<img src="./readme/effect-yes.png" width="150px" >
+<img src="./readme/effects.png" width="500px" >
 
 Here is the full list of vanity features available on BetterImage and their base units:
 * resize: px, px (separated by x)
@@ -136,11 +135,11 @@ Rendering images on React may require each image component to have common and un
 <br> <br>
 Using the example of unstyled page below:
 <br>
-<img src="./readme/before.gif" width="450px" > 
+<img src="./readme/before.gif" width="500px" > 
 <br> <br>
 Using BetterImage applies consistent and unique image styling attributes directly from the component:
 <br>
-<img src="./readme/effect.gif" width="450px" >
+<img src="./readme/effect.gif" width="500px" >
 
 ## Advanced Guides
 
