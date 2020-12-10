@@ -78,7 +78,12 @@ File compression amount can be controlled using the "quality" attribute (range f
 
 <img src="./readme/memory.png" width="500px" >
 
-## Other Features
+### Main Feature Benefits: Faster Image Renders
+In a controlled experiment with 12 PNG images with various sizes, BetterImage improved Google Lighthouse Performance score of the test React application by 10 points (63 vs 53). This translates to 18.8% improvement in overall performance vs plain image render. Considering render time increase from file conversions, we believe this benefit would be significant to any image-heavy client side React applications.
+
+<img src="./readme/bi.png" width="800px" >
+
+## Auxiliary Features
 There are several benefits of using BetterImage:
 1) Fallback image
 2) Dynamic image import references 
@@ -92,13 +97,12 @@ BetterImage renders come with fallback webp placeholders. The fallback image tak
 ### Dynamic Image References
 BetterImage can reference compressed webp image paths without manually specifying paths with `import from`. This effectively automates and abstracts away the manual process of converting image and re-importing them on the application using new image name/paths. BetterImage syntax is shown below all attributes are passed as string):
 
-<img src="./readme/img-raw.png" height="250px" >
-<img src="./readme/img-converted.png" height="250px" >
+<img src="./readme/path.png" height="250px" >
 
 ### Declarative Styling
 Declarative styling significantly reduces frequent syntax errors that come with in-line styling in React. Common syntactical errors include: wrong unit, missing unit, missing parenthesis or brackets, missing space (when chaining), misplaced effects (filter vs transformation) and etc. BetterImage provides declarative styling to help developers avoid these common pitfalls.
 
-<img src="./readme/effects.png" width="500px" >
+<img src="./readme/effects.png" width="300px" >
 
 Here is the full list of vanity features available on BetterImage and their base units:
 * resize: px, px (separated by x)
@@ -124,16 +128,9 @@ Here is the full list of vanity features available on BetterImage and their base
 * rotateX: degree
 * rotateY: degree
 
-## Benefits and Results
-
-### Faster Image Renders
-In a controlled experiment with 12 PNG images with various sizes, BetterImage improved Google Lighthouse Performance score of the test React application by 10 points (63 vs 53). This translates to 18.8% improvement in overall performance vs plain image render. Considering render time increase from file conversions, we believe this benefit would be significant to any image-heavy client side React applications.
-
-<img src="./readme/bi.png" width="800px" >
-
-### Consistent and Scalable Image Styling
-Rendering images on React may require each image component to have common and unique attributes per image. This can be worked around using class/id with CSS files or libraries but setting up external CSS file or frameworks/libraries during development is a redundant pain point. Developing and testing these edits in BetterImage is easier. Using the attributes provided, users can make in-line edits to the images and seamlessly chain them together to achieve both common and unique edits per images. 
-<br> <br>
+### Auxiliary Feature Benefits: Declarative and Consistent Image Styling
+Rendering images on React typically involves use of class/id with external CSS files or libraries. This is a lot of setup work to make minor style modifications in React. BetterImage provides relief by providing modularized and consistent styling attributes. With these custom attributes, users can make easily chain CSS styles to achieve both common and unique style edits per image. Fallback placeholder enables graceful failure handling while dynamic image reference allows any number of converted images to render on page successfully. <br> 
+<br>
 Using the example of unstyled page below:
 <br>
 <img src="./readme/before.gif" width="500px" > 
@@ -148,7 +145,6 @@ Using BetterImage applies consistent and unique image styling attributes directl
 When BetterImage component doesn't receive optional attributes, BetterImage detects the missing attributes and assigns default values to them. For example, when to constant parameters specified in the code.
 <br>
 List of default values passed can be found here:<br>
-
 * resize: none (when no value is passed to resize, image will default to original size)
 * quality: 80
 * rotation: 0
@@ -173,4 +169,4 @@ List of default values passed can be found here:<br>
 * rotateY: 0
 
 ### Why do you need to modify the WebPack configuration? 
-BetterImage is built with the latest version of CRA. Because of this, the default webpack configuration doesn't support ES6 syntax `importAll` to  dynamically reference the converted images. For BetterImage to dynamically reference the image file, WebPack must be modified to make the component run as expected. The `file-loader` option is responsible for determining how the assets are 
+BetterImage is built with the latest version of CRA. Because of CRA's default webpack configuration, the file doesn't support ES6 syntax `importAll` to  dynamically reference the converted images out of the box. For BetterImage to dynamically import the compressed image files, WebPack must be modified to make the component run as expected. The `file-loader`'s option array needs `esModule: false` to enable ES6 file-loader syntax. 
