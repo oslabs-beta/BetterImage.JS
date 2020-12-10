@@ -1,4 +1,5 @@
 # BetterImage Documentation
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/oslabs-beta/BetterImage.JS/blob/master/LICENSEs)
 
 ## What Is BetterImage
 
@@ -21,9 +22,9 @@ https://github.com/oslabs-beta/BetterImage.JS/tree/easy-setup
 ### Master Branch Setup (manual Webpack config using create-react-app)
 
 1) Clone the repository to your local folder using `git clone https://github.com/oslabs-beta/BetterImage.JS` <br>
-2) Navigate to `cd betterimage.js` into the folder <br>
+2) Navigate to the directory betterimage.js using `cd betterimage.js` <br>
 3) Run `npm install` to download the node_module dependencies <br> 
-4) Navigate to WebPack config file via `cd node_modules/react-scripts/config` <br>
+4) Navigate to WebPack config file inside react-scripts folder in node_modules (can also navigate using `cd node_modules/react-scripts/config`) <br>
 5) Open the WebPack file using `open webpack.config.js` <br>
 6) `Cmd+f` or navigate to line 581 to locate "file-loader"  <br>
 7) Add a new line of code `esModule: false` in between line 588 and 589 inside the "options" object <br>
@@ -33,7 +34,7 @@ https://github.com/oslabs-beta/BetterImage.JS/tree/easy-setup
 ### Easy-Setup Branch (pre-configured node_modules)
 
 1) Clone the branch to your local folder using `git clone --single-branch --branch easy-setup https://github.com/oslabs-beta/BetterImage.JS` <br>
-2) Navigate into the folder using `cd betterimage.js` <br>
+2) Navigate to the directory betterimage.js using `cd betterimage.js` <br>
 3) Run the application in development mode using `npm start`
 
 ### NPM Install (add to existing project)
@@ -49,7 +50,7 @@ Inside the App.js, BetterImage.JS is imported. Unlike vanilla React application,
 
 <img src="./readme/import.png" width="500px" >
 
-Notice that instead of using the `<img>` tag, `<BetterImage/>` tag is used instead. Notice for BetterImage, "source" attribute is passed instead of the "src" attribute. <br>
+Notice that BetterImage is declared using the `<BetterImage/>` instead of the `<img>` tag. Notice for BetterImage, "source" attribute is passed in place of the "src" attribute. <br>
 <img src="./readme/img1.png" width="500px" >
 <br>
 It is important to note "source" is the only required attribute for BetterImage components. Additional attributes can be chained separated by a space. Full list of attributes can be found below in the "Features" section.<br>
