@@ -1,51 +1,60 @@
 {
-  "name": "betterimage",
-  "version": "1.0.0",
-  "main": "./src/components/BetterImage/BetterImage.js",
+  "name": "BetterImage",
+  "version": "0.2.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=production nodemon server/server.js",
+    "dev-server": "cross-env NODE_ENV=development webpack serve --config webpack.config.js ",
+    "dev": "concurrently \"npm nodemon server/server.js\" \"npm run dev-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oslabs-beta/BetterImage.JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oslabs-beta/BetterImage.JS/issues"
+  },
+  "homepage": "betterimage.com",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.1.2",
-    "@testing-library/user-event": "^12.2.2",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "css-loader": "^5.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-image": "^4.0.3",
-    "react-scripts": "4.0.0",
-    "web-vitals": "^0.2.4",
-    "webp-converter": "^2.3.0"
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webp-converter": "^2.3.1",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
   },
-  "scripts": {
-    "start": "react-scripts start nodemon server/server",
-    "build": "react-scripts build",
-    "test": "react-scripts test nodemon server/server",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "keywords": [
-    "image",
-    "images",
-    "resize",
-    "optimization",
-    "react",
-    "render",
-    "webp"
-  ],
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "proxy": "http://localhost:9000"
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "^2.1.2"
+  }
 }
