@@ -97,8 +97,7 @@ BetterImage renders come with fallback webp placeholders. The fallback image tak
 ### Dynamic Image References
 BetterImage can reference compressed webp image paths without manually specifying paths with `import from`. This effectively automates and abstracts away the manual process of converting image and re-importing them on the application using new image name/paths. BetterImage syntax is shown below all attributes are passed as string):
 
-<img src="./readme/img-raw.png" height="250px" >
-<img src="./readme/img-converted.png" height="250px" >
+<img src="./readme/path.png" height="250px" >
 
 ### Declarative Styling
 Declarative styling significantly reduces frequent syntax errors that come with in-line styling in React. Common syntactical errors include: wrong unit, missing unit, missing parenthesis or brackets, missing space (when chaining), misplaced effects (filter vs transformation) and etc. BetterImage provides declarative styling to help developers avoid these common pitfalls.
